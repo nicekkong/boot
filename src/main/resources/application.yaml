@@ -6,7 +6,7 @@ spring.mvc.view.suffix: .jsp
 spring:
   datasource:
     #    url: jdbc:mysql://nicekkong.com:3306/trdev?serverTimezone=UTC&characterEncoding=UTF-8&verifyServerCertificate=false&useSSL=false
-    url: jdbc:mariadb://nicekkong.com:3306/trdev
+    url: jdbc:mariadb://nicekkong.com:3306/mydev
     username: myuser
     password: myuser!@
     #    driver-class-name: com.mysql.cj.jdbc.Driver
