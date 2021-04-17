@@ -4,3 +4,6 @@
 ${time}
 <br/>
 ${name}
+<br/>
+
+${job}
