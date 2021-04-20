@@ -1,0 +1,37 @@
+INFO  21-04-20 23:30:17[main] [com.nicekkong.boot.BootApplication:55 logStarting] - Starting BootApplication using Java 11.0.7 on MacBook-Pro.local with PID 34357 (/Users/nicekkong/Desktop/intellij_repo/boot/target/classes started by nicekkong in /Users/nicekkong/Desktop/intellij_repo/boot)
+DEBUG 21-04-20 23:30:17[main] [com.nicekkong.boot.BootApplication:56 logStarting] - Running with Spring Boot v2.4.5, Spring v5.3.6
+INFO  21-04-20 23:30:17[main] [com.nicekkong.boot.BootApplication:679 logStartupProfileInfo] - The following profiles are active: local
+DEBUG 21-04-20 23:30:18[main] [o.m.s.b.a.MybatisAutoConfiguration:223 registerBeanDefinitions] - Searching for mappers annotated with @Mapper
+DEBUG 21-04-20 23:30:18[main] [o.m.s.b.a.MybatisAutoConfiguration:227 lambda$registerBeanDefinitions$0] - Using auto-configuration base package 'com.nicekkong.boot'
+INFO  21-04-20 23:30:18[main] [o.s.d.r.c.RepositoryConfigurationDelegate:128 registerRepositoriesIn] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+INFO  21-04-20 23:30:18[main] [o.s.d.r.c.RepositoryConfigurationDelegate:188 registerRepositoriesIn] - Finished Spring Data repository scanning in 44 ms. Found 1 JPA repository interfaces.
+DEBUG 21-04-20 23:30:18[main] [o.apache.ibatis.logging.LogFactory:105 setImplementation] - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+WARN  21-04-20 23:30:18[main] [o.m.s.mapper.ClassPathMapperScanner:44 warn] - No MyBatis mapper was found in '[com.nicekkong.boot]' package. Please check your configuration.
+INFO  21-04-20 23:30:19[main] [o.s.b.w.e.tomcat.TomcatWebServer:108 initialize] - Tomcat initialized with port(s): 8080 (http)
+INFO  21-04-20 23:30:19[main] [o.a.coyote.http11.Http11NioProtocol:173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+INFO  21-04-20 23:30:19[main] [o.a.catalina.core.StandardService:173 log] - Starting service [Tomcat]
+INFO  21-04-20 23:30:19[main] [o.a.catalina.core.StandardEngine:173 log] - Starting Servlet engine: [Apache Tomcat/9.0.45]
+INFO  21-04-20 23:30:19[main] [o.apache.jasper.servlet.TldScanner:173 log] - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+INFO  21-04-20 23:30:19[main] [o.a.c.c.C.[Tomcat].[localhost].[/]:173 log] - Initializing Spring embedded WebApplicationContext
+INFO  21-04-20 23:30:19[main] [o.s.b.w.s.c.ServletWebServerApplicationContext:289 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 1637 ms
+DEBUG 21-04-20 23:30:19[main] [org.jboss.logging:152 logProvider] - Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+INFO  21-04-20 23:30:20[main] [o.s.o.j.LocalContainerEntityManagerFactoryBean:437 buildNativeEntityManagerFactory] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARN  21-04-20 23:30:21[main] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:221 openEntityManagerInViewInterceptor] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+INFO  21-04-20 23:30:21[main] [o.s.s.c.ThreadPoolTaskExecutor:181 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+DEBUG 21-04-20 23:30:21[main] [_.s.w.s.HandlerMapping.Mappings:294 detectHandlerMethods] - 
+	c.n.b.c.IndexController:
+	{ [/ || /index]}: index(Model)
+DEBUG 21-04-20 23:30:21[main] [_.s.w.s.HandlerMapping.Mappings:294 detectHandlerMethods] - 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+	{ [/error]}: error(HttpServletRequest)
+INFO  21-04-20 23:30:21[main] [o.s.b.a.w.s.WelcomePageHandlerMapping:57 <init>] - Adding welcome page template: index
+DEBUG 21-04-20 23:30:21[main] [_.s.w.s.HandlerMapping.Mappings:86 detectHandlers] - 'beanNameHandlerMapping' {}
+DEBUG 21-04-20 23:30:21[main] [_.s.w.s.HandlerMapping.Mappings:177 logMappings] - 'resourceHandlerMapping' {/webjars/**=ResourceHttpRequestHandler [Classpath [META-INF/resources/webjars/]], /**=ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]}
+DEBUG 21-04-20 23:30:21[main] [o.m.s.b.a.MybatisAutoConfiguration:266 afterPropertiesSet] - Not found configuration for registering mapper bean using @MapperScan, MapperFactoryBean and MapperScannerConfigurer.
+DEBUG 21-04-20 23:30:21[main] [o.m.spring.SqlSessionFactoryBean:49 debug] - Property 'mapperLocations' was not specified.
+INFO  21-04-20 23:30:21[main] [o.a.coyote.http11.Http11NioProtocol:173 log] - Starting ProtocolHandler ["http-nio-8080"]
+INFO  21-04-20 23:30:21[main] [o.s.b.w.e.tomcat.TomcatWebServer:220 start] - Tomcat started on port(s): 8080 (http) with context path ''
+INFO  21-04-20 23:30:21[main] [com.nicekkong.boot.BootApplication:61 logStarted] - Started BootApplication in 4.234 seconds (JVM running for 5.096)
+INFO  21-04-20 23:30:39[SpringContextShutdownHook] [o.s.s.c.ThreadPoolTaskExecutor:218 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+INFO  21-04-20 23:30:39[SpringContextShutdownHook] [o.s.o.j.LocalContainerEntityManagerFactoryBean:651 destroy] - Closing JPA EntityManagerFactory for persistence unit 'default'

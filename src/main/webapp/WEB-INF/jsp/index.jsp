@@ -7,3 +7,6 @@ ${name}
 <br/>
 <br>
 ${member.name}(${member.empNo}) / ${member.team}
+<br/>
+${email} /
+${defaultEmail} /

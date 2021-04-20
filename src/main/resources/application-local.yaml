@@ -1,0 +1,13 @@
+# 쿼리 파라메터 String 전체에 맵핑되어 보여준다. p6spy plugin
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: true # 상용에선 false로 설정하여 사용한다.
+
+email: local-nicekkong.com
+
+spring:
+  config:
+    activate:
+      on-profile: local
+

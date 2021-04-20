@@ -64,6 +64,12 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.gavlyukovskiy</groupId>
+            <artifactId>p6spy-spring-boot-starter</artifactId>
+            <version>1.5.7</version>
+        </dependency>
+
         <!-- For External Tomcat Server -->
         <!-- https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-create-a-deployable-war-file -->
         <dependency>

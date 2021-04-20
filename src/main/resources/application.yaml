@@ -31,9 +31,22 @@ spring:
         implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
     #    database: mysql
     #    database-platform:
+
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MariaDB53Dialect
         show-sql: true
         format_sql: true
         use_sql_comments: true
+
+
+
+# logback 설정
+logging:
+  config: classpath:logback/logback-${spring.config.activate.on-profile}.xml
+
+
+
+
+default-email: default-nicekkong.com
+
