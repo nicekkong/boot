@@ -25,13 +25,12 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: none  # create, update, ...
       naming:
         physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
         implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
     #    database: mysql
     #    database-platform:
-
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MariaDB53Dialect
@@ -39,11 +38,16 @@ spring:
         format_sql: true
         use_sql_comments: true
 
+  # ehcache 설정
+  cache:
+    jcache:
+      config: classpath:ehcache/ehcache-${spring.config.activate.on-profile}.xml
 
 
 # logback 설정
 logging:
   config: classpath:logback/logback-${spring.config.activate.on-profile}.xml
+
 
 
 

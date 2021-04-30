@@ -2,14 +2,13 @@ package com.nicekkong.boot.controller;
 
 import com.nicekkong.boot.domain.TbMember;
 import com.nicekkong.boot.repository.TbMemberRepository;
+import com.nicekkong.boot.service.CacheService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.time.LocalDateTime;
 
@@ -24,8 +23,13 @@ public class IndexController {
     @Value(value="${default-email}")
     private String defaultEmail;
 
-    @Autowired
-    private TbMemberRepository tbMemberRepository;
+    private final TbMemberRepository tbMemberRepository;
+    private final CacheService cacheService;
+
+    public IndexController(TbMemberRepository tbMemberRepository, CacheService cacheService) {
+        this.tbMemberRepository = tbMemberRepository;
+        this.cacheService = cacheService;
+    }
 
     @RequestMapping(value = {"/", "/index"})
     public String index(Model model) {
@@ -43,6 +47,16 @@ public class IndexController {
         logger.info("info -- Hello world.");
         logger.warn("warn -- Hello world.");
         logger.error("error -- Hello world.");
+
+
+        String test = cacheService.getCache(1);
+        logger.debug("test =================> {}", test);
+
+        String test2 = cacheService.getCache(2);
+        logger.debug("test =================> {}", test2);
+
+        cacheService.evictCache(1);
+
 
         return "index";
     }

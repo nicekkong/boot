@@ -11,3 +11,10 @@ spring:
     activate:
       on-profile: local
 
+# https://meetup.toast.com/posts/149
+#logging:
+#  level:
+#    root: debug
+#    org.springframework: trace
+#
+

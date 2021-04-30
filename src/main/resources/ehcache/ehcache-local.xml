@@ -1,0 +1,38 @@
+<config xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns='http://www.ehcache.org/v3'
+        xmlns:jsr107="http://www.ehcache.org/v3/jsr107"
+        xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core.xsd http://www.ehcache.org/v3/jsr107 http://www.ehcache.org/schema/ehcache-107-ext-3.0.xsd">
+    <service>
+        <jsr107:defaults enable-management="true" enable-statistics="true"/>
+    </service>
+    <!--여기부터 -->
+    <cache-template name="myDefaultTemplate">
+        <expiry>
+            <ttl unit="seconds">5</ttl> <!-- Time To Live-->
+<!--            <tti unit="seconds">2</tti>--> <!-- Time To Idle-->
+<!--            <none/>--> <!-- Not expired-->
+        </expiry>
+        <resources>
+            <heap unit="entries">20</heap>  <!-- cache 저장 Size(entries: 갯수/ MB, B, kB...: 용량 -->
+<!--            <offheap unit="kB">2000</offheap>-->
+        </resources>
+    </cache-template>
+
+    <cache alias="getRecordCompleteCache" uses-template="myDefaultTemplate">
+<!--        <key-type>java.lang.Integer</key-type>-->
+<!--        <value-type>java.lang.String</value-type>-->
+        <expiry>
+            <ttl unit="seconds">10</ttl>
+        </expiry>
+        <heap unit="entries">2</heap>
+    </cache>
+
+    <cache alias="TEN_SEC_CACHE">
+        <key-type>java.lang.Integer</key-type>
+        <value-type>java.lang.String</value-type>
+        <expiry>
+            <ttl unit="seconds">10</ttl>
+        </expiry>
+        <heap unit="entries">10</heap>
+    </cache>
+
+</config>

@@ -69,6 +69,11 @@
         </rollingPolicy>
     </appender>
 
+    <!-- class package 별 로그 정책 -->
+    <logger name="com.nicekkong.boot" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
     <logger name="org.springframework" level="INFO" additivity="false">
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="Error"/>
@@ -89,15 +94,21 @@
         <appender-ref ref="Error"/>
     </logger>
 
-    <logger name="com.zaxxer" level="WARN">
+    <logger name="com.zaxxer" level="WARN" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="Error"/>
+    </logger>
+
+    <logger name="com.github.gavlyukovskiy" level="DEBUG" additivity="false">
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="Error"/>
     </logger>
 
 
+
     <!-- root레벨 설정 -->
 <!--    <root level="${LOG_LEVEL}">-->
-    <root level="DEBUG">
+    <root level="INFO">
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="Error"/>
     </root>
