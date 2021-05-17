@@ -7,7 +7,4 @@ decorator:
 
 email: prod-nicekkong.com
 
-spring:
-  config:
-    activate:
-      on-profile: prod
+spring.config.activate.on-profile: prod
