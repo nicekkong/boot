@@ -49,6 +49,12 @@ logging:
   config: classpath:logback/logback-${spring.config.activate.on-profile}.xml
 
 
+# MyBatis
+mybatis:
+  mapper-locations: mybatis-mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.nicekkong.boot.domain
 
 
 

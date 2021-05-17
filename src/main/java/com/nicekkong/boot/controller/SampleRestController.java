@@ -2,10 +2,11 @@ package com.nicekkong.boot.controller;
 
 import com.nicekkong.boot.component.*;
 import com.nicekkong.boot.dto.NewsResponseDto;
+import com.nicekkong.boot.repository.QueryDslSampleRepository;
+import com.nicekkong.boot.service.MemberService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @RestController
 @CrossOrigin
@@ -25,19 +27,26 @@ public class SampleRestController {
 
     final private RestTemplate myRestTemplate;
 
+
     final private MyName nicekkongName;
 
     final private Weapon m16;
+
+    final private MemberService memberService;
+
+    final private QueryDslSampleRepository sampleRepository;
 
     final private Hello helloV3;
 
     @Autowired
     private HelloPrint helloPrintV3;
 
-    public SampleRestController(RestTemplate myRestTemplate, MyName nicekkongName, Weapon m16, Hello helloV3) {
+    public SampleRestController(RestTemplate myRestTemplate, MyName nicekkongName, Weapon m16, MemberService memberService, QueryDslSampleRepository sampleRepository, Hello helloV3) {
         this.myRestTemplate = myRestTemplate;
         this.nicekkongName = nicekkongName;
         this.m16 = m16;
+        this.memberService = memberService;
+        this.sampleRepository = sampleRepository;
         this.helloV3 = helloV3;
     }
 
@@ -70,6 +79,12 @@ public class SampleRestController {
 
         logger.debug("TotalResults ::: {}", newsResponseDto.getBody().getTotalResults());
 
+        AtomicInteger num = new AtomicInteger(10);
+        newsResponseDto.getBody().getArticles().forEach(article -> {
+            System.out.println(num.getAndIncrement() + "_____" + article.getTitle());
+
+        });
+
 
 
         m16.fire();
@@ -78,6 +93,12 @@ public class SampleRestController {
         helloV3.print(helloPrintV3);
 
 
+        System.out.println(memberService.getMemberNameById(1L)) ;
+
+
+        sampleRepository.getMemberList().forEach(m -> {
+            System.out.println(m.getName() + ":::" + m.getTeam());
+        });
 
         return ResponseEntity.ok().body(newsResponseDto).getBody();
 
